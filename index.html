@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap');
-        
+       
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+       
         :root {
             --bg-primary: #ffffff;
             --bg-secondary: #f5f5f5;
@@ -24,7 +24,7 @@
             --border: rgba(0, 0, 0, 0.1);
             --shadow: rgba(0, 0, 0, 0.1);
         }
-        
+       
         [data-theme="dark"] {
             --bg-primary: #0a0a0a;
             --bg-secondary: #1a1a1a;
@@ -35,7 +35,7 @@
             --border: rgba(255, 255, 255, 0.1);
             --shadow: rgba(0, 0, 0, 0.5);
         }
-        
+       
         body {
             font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--bg-primary);
@@ -48,7 +48,7 @@
             transition: background 0.3s ease, color 0.3s ease;
             position: relative;
         }
-        
+       
         .bg-gradient {
             position: fixed;
             top: 0;
@@ -58,7 +58,7 @@
             z-index: -1;
             overflow: hidden;
         }
-        
+       
         .gradient-orb {
             position: absolute;
             border-radius: 50%;
@@ -66,7 +66,7 @@
             opacity: 0.3;
             animation: float 20s infinite ease-in-out;
         }
-        
+       
         .orb-1 {
             width: 400px;
             height: 400px;
@@ -75,7 +75,7 @@
             left: -100px;
             animation-delay: 0s;
         }
-        
+       
         .orb-2 {
             width: 350px;
             height: 350px;
@@ -84,7 +84,7 @@
             right: -100px;
             animation-delay: 7s;
         }
-        
+       
         .orb-3 {
             width: 300px;
             height: 300px;
@@ -94,13 +94,13 @@
             transform: translate(-50%, -50%);
             animation-delay: 14s;
         }
-        
+       
         @keyframes float {
             0%, 100% { transform: translate(0, 0) scale(1); }
             33% { transform: translate(50px, -50px) scale(1.1); }
             66% { transform: translate(-50px, 50px) scale(0.9); }
         }
-        
+       
         .container {
             max-width: 600px;
             width: 90%;
@@ -114,7 +114,7 @@
             position: relative;
             animation: fadeInUp 0.8s ease;
         }
-        
+       
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -125,7 +125,7 @@
                 transform: translateY(0);
             }
         }
-        
+       
         .theme-toggle {
             position: absolute;
             top: 20px;
@@ -143,16 +143,16 @@
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
         }
-        
+       
         .theme-toggle:hover {
             transform: scale(1.1) rotate(15deg);
             box-shadow: 0 5px 20px var(--shadow);
         }
-        
+       
         .profile-section {
             margin-bottom: 2.5rem;
         }
-        
+       
         .profile-image {
             width: 120px;
             height: 120px;
@@ -163,18 +163,18 @@
             overflow: hidden;
             border: 3px solid var(--border);
         }
-        
+       
         .profile-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        
+       
         @keyframes pulse {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.05); }
         }
-        
+       
         h1 {
             font-size: 2.5rem;
             font-weight: 700;
@@ -184,21 +184,21 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+       
         .subtitle {
             font-size: 1.1rem;
             color: var(--text-secondary);
             font-weight: 400;
             margin-bottom: 2rem;
         }
-        
+       
         .social-links {
             display: flex;
             gap: 1.5rem;
             justify-content: center;
             margin-bottom: 2.5rem;
         }
-        
+       
         .social-link {
             width: 60px;
             height: 60px;
@@ -213,82 +213,88 @@
             background: var(--card-bg);
             backdrop-filter: blur(10px);
         }
-        
-        .social-link.instagram {
-            color: #E4405F;
-        }
-        
-        .social-link.youtube {
-            color: #FF0000;
-        }
-        
-        .social-link.telegram {
-            color: #0088cc;
-        }
-        
+       
+        .social-link.instagram { color: #E4405F; }
+        .social-link.youtube { color: #FF0000; }
+        .social-link.telegram { color: #0088cc; }
+       
         .social-link:hover {
             transform: translateY(-5px) scale(1.1);
             box-shadow: 0 10px 30px var(--shadow);
         }
-        
+       
         .social-link.instagram:hover {
             background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
             color: white;
             border-color: transparent;
         }
-        
+       
         .social-link.youtube:hover {
             background: #FF0000;
             color: white;
             border-color: transparent;
         }
-        
+       
         .social-link.telegram:hover {
             background: #0088cc;
             color: white;
             border-color: transparent;
         }
-        
-        .cta-button {
-            display: inline-block;
+       
+        .share-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             padding: 1rem 2.5rem;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            text-decoration: none;
+            border: none;
             border-radius: 50px;
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s ease;
             box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            cursor: pointer;
+            font-family: 'Geist', sans-serif;
         }
-        
-        .cta-button:hover {
+       
+        .share-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
         }
-        
+       
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            color: var(--text-primary);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            border: 1px solid var(--border);
+            box-shadow: 0 10px 30px var(--shadow);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            max-width: 90%;
+        }
+       
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+       
         @media (max-width: 768px) {
-            .container {
-                padding: 2rem;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .subtitle {
-                font-size: 1rem;
-            }
-            
-            .social-links {
-                gap: 1rem;
-            }
-            
-            .social-link {
-                width: 50px;
-                height: 50px;
-                font-size: 1.3rem;
-            }
+            .container { padding: 2rem; }
+            h1 { font-size: 2rem; }
+            .subtitle { font-size: 1rem; }
+            .social-links { gap: 1rem; }
+            .social-link { width: 50px; height: 50px; font-size: 1.3rem; }
         }
     </style>
 </head>
@@ -298,12 +304,10 @@
         <div class="gradient-orb orb-2"></div>
         <div class="gradient-orb orb-3"></div>
     </div>
-
     <div class="container">
         <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
             <i class="fas fa-moon" id="theme-icon"></i>
         </button>
-
         <div class="profile-section">
             <div class="profile-image">
                 <img src="https://yt3.googleusercontent.com/U3rheh4ZZZYLCpFUtkGhfzZ-jGesF2JADU1sCK2tYavrEdV4Wnbv5C09TxRabMShrzMvU38-oZ8=s120-c-k-c0x00ffffff-no-rj" alt="Azizbek">
@@ -311,7 +315,6 @@
             <h1>Azizbek</h1>
             <p class="subtitle">Video Editor | Bloger | YouTuber</p>
         </div>
-
         <div class="social-links">
             <a href="https://www.instagram.com/byazizbek_1?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-link instagram" aria-label="Instagram">
                 <i class="fab fa-instagram"></i>
@@ -319,12 +322,18 @@
             <a href="https://www.youtube.com/@byazizbek1" target="_blank" class="social-link youtube" aria-label="YouTube">
                 <i class="fab fa-youtube"></i>
             </a>
-            <a href="https://t.me/byazizbek1" target="_blank" class="social-link telegram" aria-label="Telegram">
+            <a href="https://t.me/byazizbek_1" target="_blank" class="social-link telegram" aria-label="Telegram">
                 <i class="fab fa-telegram"></i>
             </a>
         </div>
-
-
+        <button class="share-button" onclick="shareProfile()">
+            <i class="fas fa-share-nodes"></i>
+            Ulashish
+        </button>
+    </div>
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toast-message">Link nusxalandi!</span>
     </div>
 
     <script>
@@ -332,7 +341,7 @@
             const html = document.documentElement;
             const icon = document.getElementById('theme-icon');
             const currentTheme = html.getAttribute('data-theme');
-            
+           
             if (currentTheme === 'dark') {
                 html.removeAttribute('data-theme');
                 icon.className = 'fas fa-moon';
@@ -344,11 +353,92 @@
             }
         }
 
-        // Sahifa yuklanganda saqlangan theme ni o'rnatish
+        async function shareProfile() {
+            const instagramUrl = 'https://www.instagram.com/byazizbek_1';
+            const youtubeUrl = 'https://www.youtube.com/@byazizbek1';
+            const telegramUrl = 'https://t.me/byazizbek_1';
+
+            const messageText = `Azizbekni kuzating! 🚀\n\n📸 Instagram: ${instagramUrl}\n📺 YouTube: ${youtubeUrl}\n💬 Telegram: ${telegramUrl}\n\nVideo Editor | Bloger | YouTuber`;
+
+            const shareData = {
+                title: 'Azizbek - Video Editor | Bloger | YouTuber',
+                text: messageText
+                // url maydoni qo'shmaslik yaxshiroq — chunki ko'p ilovalar faqat text ni oladi
+            };
+
+            // Web Share API mavjud bo'lsa (asosan mobil)
+            if (navigator.share && navigator.canShare && navigator.canShare({text: messageText})) {
+                try {
+                    await navigator.share(shareData);
+                    showToast('Muvaffaqiyatli ulashildi!');
+                } catch (err) {
+                    if (err.name !== 'AbortError') {
+                        copyAllLinks(messageText);
+                    }
+                }
+            } else {
+                // Aks holda — hammasini clipboardga nusxalash
+                copyAllLinks(messageText);
+            }
+        }
+
+        function copyAllLinks(text) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showToastWithAllLinks(text);
+                }).catch(() => {
+                    fallbackCopy(text);
+                });
+            } else {
+                fallbackCopy(text);
+            }
+        }
+
+        function fallbackCopy(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+           
+            try {
+                document.execCommand('copy');
+                showToastWithAllLinks(text);
+            } catch (err) {
+                showToast('Xatolik: Nusxalash muvaffaqiyatsiz!');
+            }
+           
+            document.body.removeChild(textarea);
+        }
+
+        function showToastWithAllLinks(text) {
+            const toastMessage = document.getElementById('toast-message');
+            toastMessage.innerHTML = `
+                <div style="text-align: left; font-size: 0.95rem;">
+                    <strong>✅ Barcha linklar nusxalandi!</strong><br><br>
+                    <small>Endi istalgan joyga (story, post, chat) joylashtiring 👇</small>
+                </div>
+            `;
+            document.getElementById('toast').classList.add('show');
+            setTimeout(() => {
+                document.getElementById('toast').classList.remove('show');
+            }, 7000);
+        }
+
+        function showToast(message) {
+            const toastMessage = document.getElementById('toast-message');
+            toastMessage.textContent = message;
+            document.getElementById('toast').classList.add('show');
+            setTimeout(() => {
+                document.getElementById('toast').classList.remove('show');
+            }, 4000);
+        }
+
+        // Sahifa yuklanganda theme ni tiklash
         window.addEventListener('DOMContentLoaded', () => {
             const savedTheme = localStorage.getItem('theme');
             const icon = document.getElementById('theme-icon');
-            
             if (savedTheme === 'dark') {
                 document.documentElement.setAttribute('data-theme', 'dark');
                 icon.className = 'fas fa-sun';
